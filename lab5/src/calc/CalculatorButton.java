@@ -1,5 +1,6 @@
 package calc;
 
+import javax.swing.BorderFactory;
 import javax.swing.JButton;
 import java.awt.Color;
 import java.awt.Dimension;
@@ -23,6 +24,10 @@ abstract class CalculatorButton extends JButton {
 
     void setColor(Color color) {
         this.setBackground(color);
+    }
+
+    void setBorderColor(Color color) {
+        this.setBorder(BorderFactory.createLineBorder(color, 2));
     }
 
     @Override

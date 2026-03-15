@@ -1,5 +1,7 @@
 package calc;
 
+import java.awt.Color;  
+
 class DigitButton extends CalculatorButton {
     DigitButton(String text, Situation situation) {
         super(text, situation);

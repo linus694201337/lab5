@@ -4,8 +4,9 @@ import javax.swing.*;
 import java.awt.*;
 
 public class GUI extends JFrame {
+
     public GUI() {
-        setTitle("Calculator");
+        super("Räkna rätt");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
         JLabel display = new JLabel("0", SwingConstants.RIGHT);
@@ -18,7 +19,27 @@ public class GUI extends JFrame {
 
         JPanel canvas = new JPanel(new GridBagLayout());
         JPanel keyPad = new JPanel(new GridLayout(4,4));
+
+        keyPad.add(new DigitButton("7", situation));
+        keyPad.add(new DigitButton("8", situation));
+        keyPad.add(new DigitButton("9", situation));
+        keyPad.add(new BinOpButton("/", situation, (a, b) -> a / b));
+
+        keyPad.add(new DigitButton("4", situation));
+        keyPad.add(new DigitButton("5", situation)); 
+        keyPad.add(new DigitButton("6", situation));
+        keyPad.add(new BinOpButton("*", situation, (a, b) -> a * b));
+
+        keyPad.add(new DigitButton("1", situation));
+        keyPad.add(new DigitButton("2", situation));
+        keyPad.add(new DigitButton("3", situation));
+        keyPad.add(new BinOpButton("-", situation, (a, b) -> a - b));
         
+        keyPad.add(new DigitButton("0", situation));
+        keyPad.add(new EqualsButton(situation));
+        keyPad.add(new CancelButton(situation));
+        keyPad.add(new BinOpButton("+", situation, (a, b) -> a + b));
+
         GridBagConstraints gbc = new GridBagConstraints();
 
         gbc.gridx = 0;
@@ -30,7 +51,6 @@ public class GUI extends JFrame {
         canvas.add(keyPad, gbc);
 
         this.setContentPane(canvas);
-
         this.pack();
         this.setVisible(true);
     }
