@@ -1,8 +1,16 @@
 package calc;
 
-import java.awt.Color;  
-
+/**
+ * En knapp som representerar en siffra i kalkylatorn.
+ */
 class DigitButton extends CalculatorButton {
+
+    /**
+     * Skapar en ny sifferknapp.
+     *
+     * @param text      texten som visas på knappen
+     * @param situation delat tillstånd för kalkylatorn
+     */
     DigitButton(String text, Situation situation) {
         super(text, situation);
     }

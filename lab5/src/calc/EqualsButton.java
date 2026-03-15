@@ -1,9 +1,15 @@
 package calc;
 
-import java.awt.Color;
-
+/**
+ * Knapp som räknar ut resultatet av den valda binära operationen.
+ */
 class EqualsButton extends CalculatorButton {
 
+    /**
+     * Skapar en equals-knapp.
+     *
+     * @param situation delat tillstånd för kalkylatorn
+     */
     EqualsButton(Situation situation) {
         super("=", situation);
     }
@@ -18,7 +24,7 @@ class EqualsButton extends CalculatorButton {
 
                 situation.display.setText(String.valueOf(result));
 
-                situation.binaryOperator.setBorderColor(Color.BLACK);
+                situation.binaryOperator.resetBorder();
 
                 situation.state = State.HasResult;
                 break;

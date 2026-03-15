@@ -1,9 +1,15 @@
 package calc;
 
-import java.awt.Color;
-
+/**
+ * Knapp som återställer kalkylatorn till startläget.
+ */
 class CancelButton extends CalculatorButton {
 
+    /**
+     * Skapar en cancel-knapp.
+     *
+     * @param situation delat tillstånd för kalkylatorn
+     */
     CancelButton(Situation situation) {
         super("C", situation);
     }
@@ -13,9 +19,8 @@ class CancelButton extends CalculatorButton {
         situation.display.setText("0");
         situation.state = State.Input1;
     
-
         if (situation.binaryOperator != null) {
-            situation.binaryOperator.setColor(Color.LIGHT_GRAY);
+            situation.binaryOperator.resetBorder();
             situation.binaryOperator = null;
         }
     }
