@@ -4,12 +4,11 @@ import javax.swing.JButton;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Font;
-import java.awt.Font;
 
 abstract class CalculatorButton extends JButton {
     Situation situation;
 
-    public CalculatorButton(String text) {
+    public CalculatorButton(String text, Situation situation) {
         super(text);
         this.situation = situation;
 

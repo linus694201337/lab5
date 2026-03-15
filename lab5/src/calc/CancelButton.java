@@ -1,7 +1,7 @@
 package calc;
 
 public class CancelButton extends CalculatorButton {
-    public CancelButton(String text) {
-        super(text);
+    public CancelButton(Situation situation) {
+        super("C", situation);
     }
 }
