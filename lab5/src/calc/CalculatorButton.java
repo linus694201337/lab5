@@ -28,12 +28,13 @@ abstract class CalculatorButton extends JButton {
     public CalculatorButton(String text, Situation situation) {
         super(text);
         this.situation = situation;
-
+        int fontSize = 25;
+        int size = 60;
         this.defaultBorder = this.getBorder();
 
-        this.setFont(new Font("Arial", Font.BOLD, 25));
+        this.setFont(new Font("Arial", Font.BOLD, fontSize));
         this.setBackground(Color.LIGHT_GRAY);
-        this.setPreferredSize(new Dimension(60,60));
+        this.setPreferredSize(new Dimension(size,size));
 
         this.addActionListener(e -> transition());
     }
@@ -58,7 +59,8 @@ abstract class CalculatorButton extends JButton {
      * @param color färgen som ska användas för kanten
      */
     void setBorderColor(Color color) {
-        this.setBorder(BorderFactory.createLineBorder(color, 2));
+        int thickness = 2;
+        this.setBorder(BorderFactory.createLineBorder(color, thickness));
     }
 
     /**

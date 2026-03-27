@@ -15,18 +15,22 @@ public class GUI extends JFrame {
      */
     public GUI() {
         super("Räkna rätt");
+        int fontSize = 30;
+        int thickness = 2;
+        int row = 4;
+        int col = 4;
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
         JLabel display = new JLabel("0", SwingConstants.RIGHT);
-        display.setFont(new Font("Arial", Font.BOLD, 30));
-        display.setBorder(BorderFactory.createLineBorder(Color.BLACK, 2));
+        display.setFont(new Font("Arial", Font.BOLD, fontSize));
+        display.setBorder(BorderFactory.createLineBorder(Color.BLACK, thickness));
         display.setOpaque(true);
         display.setBackground(Color.WHITE);
 
         Situation situation = new Situation(display);
 
         JPanel canvas = new JPanel(new GridBagLayout());
-        JPanel keyPad = new JPanel(new GridLayout(4,4));
+        JPanel keyPad = new JPanel(new GridLayout(row, col));
 
         keyPad.add(new DigitButton("7", situation));
         keyPad.add(new DigitButton("8", situation));
